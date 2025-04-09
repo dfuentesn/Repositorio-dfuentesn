@@ -15,6 +15,6 @@ int main(void) {
     if (guessed_number == NUM){
         std::cout <<"GANASTE!!!!\n";
     }
-    
+
     return 0;
 }
