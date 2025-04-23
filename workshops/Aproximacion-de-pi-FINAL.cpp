@@ -11,7 +11,8 @@ const double M_PI = 3.14159265358979323846;
 //Luego, creo la funcion pi_aprox con double para poder almacenar decimales (a diferencia de int) con varios digitos (a diferencia de float)
 double pi_aprox(int n){
     double suma = 0.0;
-    
+    double denominador = 1.0;  //como 16**k inicia con k=0, tenemos 1.0
+
     for (int k = 0; k < n; k++) //En este caso uso solo < para retornar exactamente n terminos
     { 
         double termino = (4.0/(8*k+1)) - 
@@ -20,10 +21,10 @@ double pi_aprox(int n){
                          (1.0/(8*k+6));
         //En el termino separe el denominador de las restas para mayor presicion
 
-        termino /= std::pow(16, k);
+        termino /= denominador;
         suma += termino; 
+        denominador *= 16.0; //En cada nueva iteracion se multiplicara el denominador por 16, esto aumentara al denominador de la forma 16**k
     }
-    
     return suma; //Aca retorno las sumatorias, eso nos dara la aproximacion de pi
 }
 
