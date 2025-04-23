@@ -18,9 +18,9 @@ double pi_aprox(int n){
                          (2.0/(8*k+4)) - 
                          (1.0/(8*k+5)) - 
                          (1.0/(8*k+6));
-        //En el termino separe el denominador de las restas para mayor presicion
+        //En el termino separe el denominador de las restas para una mayor presicion
 
-        termino /= std::pow(16, k);
+        termino /= std::pow(16, k); //En esta linea divido el termino por 16**k
         suma += termino; 
     }
     
@@ -33,12 +33,11 @@ int main(){
 
     for (int n = 1; n <= 20; n++) //Aqui defino la variacion del loop entre 1 y 20
     {
-    double aprox = pi_aprox(n); 
-    double diff_rel = std::abs(1 - aprox /M_PI); //gracias a la linea anterior acortamos pi_aprox(n) con solo aprox
+    double diff_rel = std::abs(1 - pi_aprox(n) /M_PI);
 
     std::cout << "n = ";
     if (n < 10) std::cout << " ";
-    std::cout << n << ", π ≈ " << aprox
+    std::cout << n << ", π ≈ " << pi_aprox(n)
     << ", Diferencia relativa: " << diff_rel << std::endl;
      }
      return 0;
