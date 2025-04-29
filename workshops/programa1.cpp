@@ -27,12 +27,14 @@ bool isprime(long n)
     return flag;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
-    long n;
-    std::cout << "n=";
-    std::cin >> n;
-
+        if (argc != 2) {
+        std::cerr << "Uso: " << argv[0] << " <numero>" << std::endl;
+        return 1;
+        }
+    int n = std::stoi(argv[1]);
+    
     long sum = 0;
     for (long ii = 2; ii <= n; ++ii)
     {
