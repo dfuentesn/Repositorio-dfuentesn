@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main (){
+    int numero_enteros = 7;
+    float numeros_decimales = 6.5;
+    double decimales = 45.7890;
+
+    std::cout << numero_enteros;
+    std::cout << numeros_decimales;
+    std::cout << decimales;
+
+    return 0;
+}
