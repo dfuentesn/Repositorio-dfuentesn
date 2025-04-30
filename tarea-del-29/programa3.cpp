@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include <string>
 
 //defíno la función que calcula fibonacci con long 
