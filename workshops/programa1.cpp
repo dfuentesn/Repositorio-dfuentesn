@@ -27,7 +27,7 @@ bool isprime(long n){
 }
 
 int main(int argc, char **argv){
-    
+
     //verifica que el numero de argumentos sea el nombre y el argumento (osea 2), si no se cumple, muestra un mensaje de error
     if (argc != 2){
         std::cerr << "Uso: " << argv[0] << " <numero>" << "\n";
