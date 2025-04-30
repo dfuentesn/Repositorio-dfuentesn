@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+//le quite cmath porque no se usa para nada en este código
 
 //defíno la función que calcula fibonacci con long 
 long fibonacci(long n){
