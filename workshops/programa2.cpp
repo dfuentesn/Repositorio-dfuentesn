@@ -2,7 +2,7 @@
 #include <cmath>
 #include <string>
 
-//defino la funcion isprime (inicia a contar primos desde 2, verifica que los demas sean divisibles por la raiz del numero mas 1 (precaucion vizta en clase))
+//defíno la función isprime (inicia a contar primos desde 2, verifica que los demás sean divisibles por la raíz del número más 1 (precaución vista en clase))
 bool isprime (long n){
     if (n <= 1){
         return false;      
@@ -10,7 +10,7 @@ bool isprime (long n){
 
     if (n == 2){
         return true;        
-    } //2 es el unico par primo
+    } //2 es el único par primo
 
     for (long ii = 2; ii <= std::sqrt(n) + 1; ii++){
         if (n % ii == 0){
@@ -22,13 +22,13 @@ bool isprime (long n){
 
 long max_prime (long n){
     
-    //incia en 0, el 0 indicara que el numero NO tiene primos (como 1 o menores a 1)
+    //incia en 0, el 0 indicará que el número NO tiene primos (como 1 o menores a 1)
     long max_prime = 0;
     
     if (isprime(n))        
         return n;
 
-//si se cumple que el numero es primo, entonce:
+//si se cumple que el número es primo, entonces:
  for (long ii = 2; ii <= std::sqrt(n) + 1; ii ++){
     while (n % ii ==0){
         if (isprime(ii)){
@@ -38,7 +38,7 @@ long max_prime (long n){
     } //reduce a n dividiendole por ii
  }
 
-//aca defino que si el n que obtuvimos es primo y mayor que dos, es el mayor factor
+//acá defino que si el n que obtuvimos es primo y mayor que dos, es el mayor factor
  if (n > 2 && isprime(n)){
         max_prime = n;
     }
@@ -51,8 +51,8 @@ int main(int argc, char** argv) {
         return 1;            
     } //1 es como false pero para no booleanos
     
-    long n = std::stol(argv[1]);   //aca convierto el argumento en un entero largo
-    long result = max_prime(n);    //aqui calculo el mayor primo
-    std::cout << result << "\n";   
+    long n = std::stol(argv[1]);   //acá convierto el argumento en un entero largo
+    long result = max_prime(n);    //aquí calculo el mayor primo
+    std::cout << "el factor primo más grande = " << result << "\n";   
     return 0;
 }
