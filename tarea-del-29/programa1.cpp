@@ -28,8 +28,8 @@ bool isprime(long n){
 
 int main(int argc, char **argv){
     
-    //convierte el argumento a un entero (como visto en clase)
-    int n = std::stoi(argv[1]);
+    //convierte el argumento a un entero (como visto en clase), le pongo long para que no falle con numeros grandes
+    long n = std::stoi(argv[1]);
 
     //inicia la variable suma en 0 para acumular los valores
     long sum = 0;
