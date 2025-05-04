@@ -2,11 +2,11 @@
 #include <cmath>
 
 int main(){
-    int num, k = 0;
+    long num, k = 0;
     std::cout << "ingrese un numero = ";
     std::cin >> num;
 
-    for (int i = 1; i <= num; i++){
+    for (long i = 1; i <= num; i++){
         if (num % i == 0){
             k++;
         }
