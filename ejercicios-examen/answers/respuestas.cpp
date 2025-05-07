@@ -1,3 +1,5 @@
+#include <iostream>
+
 bool is_prime(long n) {
     for (long ii = 2; ii*ii <= n; ++ii)
         if (n%ii == 0) return false;
@@ -17,5 +19,3 @@ void nth_twin_primes(long n) {
         }
     }
 }
-
-//asjkjsidjqjdwpwd
