@@ -16,7 +16,14 @@ int main(void){
 }
 
 int isprime(int m){
-    for (int ii = 2; ii*ii <= m; ii++ )
+    if (m <= 1){
+        std::cerr << "out of range: " << m << "\n";
+        return false;
+    }
+
+    if (m == 2) return true;
+
+    for (int ii = 2; ii <= std::sqrt(m) + 1; ii++ )
     if (m%ii == 0) return false;
     return true;
 }
@@ -27,7 +34,7 @@ int largest_prime_factor(int m){
     if (isprime(m))        
         return m;
 
-    for (long ii = 2; ii*ii <= m; ii++){
+    for (long ii = 2; ii <= std::sqrt(m) + 1; ii++){
          while (m % ii ==0){
              if (isprime(ii)){
              largestprime = ii;   
@@ -35,5 +42,9 @@ int largest_prime_factor(int m){
          m /= ii;              
         }     
     }
-  return 0;
+
+     if (m > 2 && isprime(m)){
+        largestprime = m;
+    }
+    return largestprime;
 }
