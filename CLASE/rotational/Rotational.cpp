@@ -23,8 +23,8 @@ int main(int argc, char **argv) {                                               
         return 1;
     }
 
-    std::vector<double> v = {std::stod(argv[1]), std::stod(argv[2]), std::stod(argv[3])};               //Convertimos las tres priemras entradas en numeros para guardarlas en el vector 
-    std::vector<double> r1(3), r2(3), Rm(9);                                                            //r1 y r2 fuardan los vectores temporales y Rm la matris de tramaño 9 (3x3)
+    std::vector<double> v = {std::stod(argv[1]), std::stod(argv[2]), std::stod(argv[3])};               //Convertimos las tres primeras entradas en numeros para guardarlas en el vector 
+    std::vector<double> r1(3), r2(3), Rm(9);                                                            //r1 y r2 guardan los vectores temporales y Rm la matris de tramaño 9 (3x3)
 
     rotational_matrix(std::stod(argv[4]), 'x', Rm);                                                     //Calcula la matris de rotacion de thetax en x, multiplica eso por el vector
     mult(Rm, v, r1);                                                                                    //Guarda el resultado en r1
